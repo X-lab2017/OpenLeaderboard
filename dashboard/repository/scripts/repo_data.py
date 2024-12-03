@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import requests
 import re
@@ -148,6 +149,11 @@ def load_org_repo_platform_from_clickhouse(client, table_name):
 if __name__ == '__main__':
     url = "https://oss.x-lab.info/open_digger/"  # 基础API URL
     platform_project_mapping_table = 'platform_project_mapping'  # 存储repo_name和platform信息的表名
+
+    # 获取从 GitHub 或其他平台的凭证
+    dashboard_host = os.getenv('DASHBOARD_DB_HOST')
+    dashboard_user = os.getenv('DASHBOARD_DB_USER')
+    dashboard_password = os.getenv('DASHBOARD_DB_PASSWORD')
 
     # 连接到ClickHouse
     target_client = Client(
