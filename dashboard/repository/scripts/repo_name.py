@@ -1,3 +1,4 @@
+import os
 import requests
 import pandas as pd
 from datetime import datetime
@@ -88,19 +89,20 @@ if __name__ == "__main__":
     # Step 3: 连接 ClickHouse 数据库
     # 读取数据的 ClickHouse
     source_client = Client(
-        host='cc-2ze7189376o5m9759.public.clickhouse.ads.aliyuncs.com',
+        host=os.environ.get('xlabDB_HOST'),
         port=9000,
-        user='xlab',
-        password='PASSWORD',
+        user=os.environ.get('xlabDB_USER'),
+        password=os.environ.get('xlabDB_PASSWORD'),
         database='opensource',
         send_receive_timeout=600
     )
 
     # 保存数据的 ClickHouse
     target_client = Client(
-        host='47.116.118.218',
+        host=os.environ.get('dashboardDB_HOST'),
         port=9000,
-        user='USERS',
+        user=os.environ.get('dashboardDB_USER'),
+        password=os.environ.get('dashboardDB_PASSWORD'),
         database='opensource',
         send_receive_timeout=600
     )
