@@ -1,29 +1,60 @@
 /* 覆盖 ant design card 样式 */
 .ant-card-body {
-  padding: 40px;
+  padding: 40px 80px;
+  background: #050a12;
 }
 .ant-card {
-  border-radius: 42px;
+  /* border-radius: 42px; */
 }
-
+.ant-spin-container {
+  background: #070f1a;
+}
 /*  */
 .table {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 30, 51, 1);
+}
+.ant-radio-wrapper span {
+  color: #fff;
+}
+.table-content,
+.table,
+.ant-card .ant-card-bordered {
+  border: none;
+}
+.ant-table-thead > tr > th {
+  background: rgba(0, 30, 51, 1);
+  color: #fff;
+}
+.ant-table table tbody,
+.ant-table table td {
+  color: #fff;
+  font-family: 'Arial';
+  background: rgba(0, 30, 51, 1);
+}
+.ant-table table td:hover {
+  color: rgba(0, 30, 51, 1);
+}
+.ant-table-thead {
+  background: rgba(0, 30, 51, 1);
 }
 .table-content {
-  padding: 0 50px;
+  /* padding: 0 50px; */
   width: 100%;
   max-width: 1600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
-  box-shadow: 0 15px 20px 15px #f7f7ff;
-  border-radius: 42px;
+  background: rgba(0, 30, 51, 1);
+  /* box-shadow: 0 15px 20px 15px #f7f7ff; */
+  /* border-radius: 42px; */
 }
-
+.ant-table-tbody > tr > td,
+.ant-table-thead > tr > th {
+  border-bottom: 1px solid rgba(205, 206, 220, 0.279);
+}
 /* 适配移动端样式 */
 @media only screen and (max-width: 768px) {
   .table-content {

@@ -1,8 +1,11 @@
 .myFontColor {
-  color: rgba(9, 17, 86, 1);
+  /* color: rgba(9, 17, 86, 1); */
+  color: #fff;
   font-size: 18px;
 }
-
+body {
+  background: #070f1a;
+}
 .specialColor {
   color: #ffcc19;
 }
