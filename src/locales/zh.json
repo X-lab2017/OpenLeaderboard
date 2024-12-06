@@ -25,8 +25,6 @@
   "activity": "活跃度",
   "influence": "OpenRank",
   "details": "详情",
-  "showMore": "展示更多",
-  "noMore": "没有更多啦",
   "issue_comments": "Issue 评论",
   "open_issues": "创建 Issue",
   "open_pulls": "创建 PR",

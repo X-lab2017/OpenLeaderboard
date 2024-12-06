@@ -25,8 +25,6 @@
   "activity": "Activity",
   "influence": "OpenRank",
   "details": "Details",
-  "showMore": "show more",
-  "noMore": "no more",
   "issue_comments": "Issue Comments",
   "open_issues": "Open Issues",
   "open_pulls": "Open PRs",
