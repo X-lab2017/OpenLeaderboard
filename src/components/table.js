@@ -6,6 +6,7 @@ import QAmiss from './QA2';
 import TablePanel from './TablePanel';
 import ArrowRender from './arrow';
 import PointRender from './changeNumber';
+import Trend from './Trend';
 import RoundFloat from './resolveFloat';
 import Trophy from './rankTrophy';
 import expandObject from '../util/expandObject';
@@ -266,6 +267,36 @@ const open_rankColumns = (object, boardType, t_month) => [
     align: 'right',
     render: (text, row, index) => {
       return RoundFloat(text);
+    },
+  },
+  {
+    title: t('trend'),
+    dataIndex: 'trend',
+    width: '10%',
+    align: 'left',
+    render: (trendData, row, index) => {
+      let valueDelta = row.valueDelta;
+      let value = row.value;
+      function generateRandomArray(length, min, max) {
+        const arr = [];
+        for (let i = 0; i < length; i++) {
+          const randomNumber =
+            Math.floor(Math.random() * (max - min + 1)) + min;
+          arr.push(randomNumber);
+        }
+        return arr;
+      }
+      let randData = [];
+      if (valueDelta < 0) {
+        randData = generateRandomArray(30, value + valueDelta, value);
+      } else {
+        randData = generateRandomArray(12, value, value + valueDelta);
+      }
+      randData[0] = value;
+      randData[randData.length - 1] = value + valueDelta;
+      return Trend(randData);
+      // TODO 暂时根据变化情况随机产生趋势数据，数据接口支持trendData后将其输入进Trend组件即可
+      // return Trend(trendData);
     },
   },
   {
